@@ -2,7 +2,7 @@ package mx.sostech.alumno;
 
 import java.util.Comparator;
 
-public class cuatri implements Comparable<cuatri>, Comparator<cuatri> {
+public class cuatri<T extends alumno<T>> implements Comparable<cuatri>, Comparator<cuatri> {
     private String nombre;
     private Integer grado;
 

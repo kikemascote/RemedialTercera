@@ -2,7 +2,7 @@ package mx.sostech.alumno;
 
 import java.util.Comparator;
 
-public class alumno implements Comparable<alumno>, Comparator<alumno> {
+public class alumno<T>  implements Comparable<alumno>, Comparator<alumno> {
 
     private String Nombre = null;
     private double Promedio = 0.0d;

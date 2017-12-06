@@ -1,12 +1,13 @@
 package mx.sostech.queue;
 
+import mx.sostech.alumno.materia;
 import mx.sostech.exceptions.QueueEmptyException;
 import mx.sostech.exceptions.QueueFullException;
 import mx.sostech.node.calificacion;
 
 import java.util.Iterator;
 
-public class tqueue<T> implements iQueue<T>, Iterable<T> {
+public class tqueue<T extends materia> implements iQueue<T>, Iterable<T> {
 
     calificacion<T> back;
     calificacion<T> front;
@@ -139,7 +140,7 @@ public class tqueue<T> implements iQueue<T>, Iterable<T> {
 
 
     @Override
-    public calificacion<T> Search(T value) throws QueueEmptyException {
+    public calificacion<T> search(T value) throws QueueEmptyException {
         if (isEmpty()) throw new QueueEmptyException("Cola vac�a");
         calificacion<T> tmp = back;
         int i = 0;

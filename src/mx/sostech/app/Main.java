@@ -7,6 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        calificacion<alumno> alumnode = new calificacion<>();
+        calificacion<alumno> alumnode = new calificacion<alumno>();
+
+        
     }
 }

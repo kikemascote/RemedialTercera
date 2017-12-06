@@ -1,7 +1,11 @@
 package mx.sostech.node;
 
 
-public class calificacion<T> implements Comparable<T> {
+import mx.sostech.alumno.materia;
+
+import java.util.Comparator;
+
+public class calificacion<T extends materia> implements Comparable<T>, Comparator<Double> {
     private T value;
     private calificacion<T> Left = null;
     private calificacion<T> Right = null, next = null, back = null;
@@ -15,7 +19,6 @@ public class calificacion<T> implements Comparable<T> {
     public calificacion(T value) {
         this.value = value;
     }
-
 
     public long getIndex() {
         return index;
@@ -65,8 +68,7 @@ public class calificacion<T> implements Comparable<T> {
         this.back = back;
     }
 
-    @Override
-    public int compareTo(T o) {
+    public int compareTo(double o) {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -78,9 +80,21 @@ public class calificacion<T> implements Comparable<T> {
     }
 
     @Override
+    public int compare(Double o1, Double o2) {
+        if (o1 > o2)
+            return 1;
+        else
+            return -1;
+    }
+
+    @Override
     public boolean equals(Object arg0) {
         // TODO Auto-generated method stub
         return super.equals(arg0);
     }
 
+    @Override
+    public int compareTo(T o) {
+        return 0;
+    }
 }

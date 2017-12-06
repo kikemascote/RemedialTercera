@@ -16,7 +16,7 @@ public interface iQueue<T> {
 
     T front() throws QueueEmptyException;
 
-    calificacion<T> Search(T value) throws QueueEmptyException;
+    calificacion<T> search(T value) throws QueueEmptyException;
 
     void clear();
 

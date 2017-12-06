@@ -2,7 +2,7 @@ package mx.sostech.alumno;
 
 import java.util.Comparator;
 
-public class materia implements Comparable<materia>, Comparator<materia> {
+public class materia<T extends cuatri> implements Comparable<materia>, Comparator<materia> {
     private String nombre;
     private Integer unidades=0;
 
