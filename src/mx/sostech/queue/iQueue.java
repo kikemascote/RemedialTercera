@@ -1,11 +1,12 @@
 package mx.sostech.queue;
 
 
+import mx.sostech.alumno.materia;
 import mx.sostech.exceptions.QueueEmptyException;
 import mx.sostech.exceptions.QueueFullException;
 import mx.sostech.node.calificacion;
 
-public interface iQueue<T> {
+public interface iQueue<T extends materia> {
     void enQueue(T value) throws QueueFullException;
 
     T deQueue() throws QueueEmptyException;

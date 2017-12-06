@@ -1,14 +1,16 @@
 package mx.sostech.node;
 
 
-import mx.sostech.alumno.materia;
+import mx.sostech.alumno.materia ;
 
 import java.util.Comparator;
 
-public class calificacion<T extends materia> implements Comparable<T>, Comparator<Double> {
-    private T value;
-    private calificacion<T> Left = null;
-    private calificacion<T> Right = null, next = null, back = null;
+public class calificacion<materia> extends mx.sostech.alumno.materia {
+    private materia value;
+    private double ap = 0.0;
+    private double rep = 0.0;
+    private calificacion<materia> Left = null;
+    private calificacion<materia> Right = null, next = null, back = null;
     private long index = 0;
 
     public calificacion() {
@@ -16,10 +18,15 @@ public class calificacion<T extends materia> implements Comparable<T>, Comparato
 
     }
 
-    public calificacion(T value) {
+    public calificacion(materia value) {
         this.value = value;
     }
 
+    public calificacion(double ap,double rep) {
+        //this.value = value;
+        this.ap = ap;
+        this.rep = rep;
+    }
     public long getIndex() {
         return index;
     }
@@ -28,45 +35,48 @@ public class calificacion<T extends materia> implements Comparable<T>, Comparato
         this.index = index;
     }
 
-    public T getValue() {
+    public materia getValue() {
         return value;
     }
 
-    public void setValue(T value) {
+    public void setValue(materia value) {
         this.value = value;
     }
 
-    public calificacion<T> getLeft() {
+    public calificacion<materia> getLeft() {
         return Left;
     }
 
-    public void setLeft(calificacion<T> left) {
+    public void setLeft(calificacion<materia> left) {
         Left = left;
     }
 
-    public calificacion<T> getRight() {
+    public calificacion<materia> getRight() {
         return Right;
     }
 
-    public void setRight(calificacion<T> right) {
+    public void setRight(calificacion<materia> right) {
         Right = right;
     }
 
-    public calificacion<T> getNext() {
+    public calificacion<materia> getNext() {
         return next;
     }
 
-    public void setNext(calificacion<T> next) {
+    public void setNext(calificacion<materia> next) {
         this.next = next;
     }
 
-    public calificacion<T> getBack() {
+    public calificacion<materia> getBack() {
         return back;
     }
 
-    public void setBack(calificacion<T> back) {
+    public void setBack(calificacion<materia> back) {
         this.back = back;
     }
+
+    /*root.setRep(7.99);
+        root.setAp(8.0d);*/
 
     public int compareTo(double o) {
         // TODO Auto-generated method stub
@@ -79,7 +89,7 @@ public class calificacion<T extends materia> implements Comparable<T>, Comparato
         return super.toString();
     }
 
-    @Override
+    //@Overload
     public int compare(Double o1, Double o2) {
         if (o1 > o2)
             return 1;
@@ -93,8 +103,8 @@ public class calificacion<T extends materia> implements Comparable<T>, Comparato
         return super.equals(arg0);
     }
 
-    @Override
-    public int compareTo(T o) {
+    /*@Override
+    public int compareTo(materia o) {
         return 0;
-    }
+    }*/
 }

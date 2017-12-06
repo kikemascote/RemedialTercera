@@ -1,5 +1,6 @@
 package mx.sostech.tree;
 
+import mx.sostech.alumno.materia;
 import mx.sostech.node.calificacion;
 import mx.sostech.queue.tqueue;
 
@@ -13,9 +14,9 @@ public class tree<T extends Comparable<T>> implements Comparable<T> {
     private tqueue<calificacion<T>> cola;
 
     public tree() {
-        root = new calificacion<T>();
-        root.setRep(7.99);
-        root.setAp(8.0d);
+        root = new calificacion<T>(8.0d,7.99);
+     //   root.setRep(7.99);
+     //   root.setAp(8.0d);
     }
 
     public tree(T value) {
